@@ -106,12 +106,51 @@
         </div>
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title"></h5>
+            <p class="card-text"></p>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
           <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdwdmtjlpqvn67do5p8oa.png" class="card-img-bottom" alt="...">
         </div>
+
+        <div class="card">
+          <div class="card-header">
+            Quote
+          </div>
+          <div class="card-body mb-3">
+            <blockquote class="blockquote mb-0">
+              <p><strong>Announcing the First DEV Education Track: "Build Apps with Google AI Studio"</strong></p>
+              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-header">
+            Quote
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p><strong>9 Open source Gems to become the Ultimate Developer</strong></p>
+              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-header">
+            Quote
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p><strong>From prompt to deployed App in less than 2 minutes</strong></p>
+              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+
+
+
       </div>
 
       <div class="col-lg-3">
