@@ -13,17 +13,31 @@
     <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-            <form>
+
+            <!-- start of alert  -->
+            <?php if ($_GET['msg']) { ?>
+
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>
+                        <?php
+                        $msg = $_GET['msg'];
+                        echo $msg;
+                        ?>
+                    </strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+            <?php } ?>
+            <!-- end of alert  -->
+
+            <form action="./login2.php" method="POST">
                 <div class="mb-3"><br><br>
                     <b><label for="exampleInputEmail1" class="form-label">Email</label></b>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                 </div>
                 <div class="mb-3">
                     <b><label for="exampleInputPassword1" class="form-label">Password</label></b>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
