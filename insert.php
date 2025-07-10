@@ -1,22 +1,28 @@
 <?php
-
 include "./conn.php";
 
-// Getting data from the form using POST
-$fn = $_POST['user_id'];
-$ln = $_POST['title'];
-$ca = $_POST['content'];
-$cr = $_POST['created_at'];
+// Safely get POST data
+$fn = $_POST['user_id'] ;
+$ln = $_POST['title'] ;
+$ca = $_POST['content'] ;
+$cr = $_POST['created_at'] ?? date('d-m-Y H:i:s'); // Use current time if not provided
 
-// Inserting to the database
-$sql = "INSERT INTO devto.article (user_id, title, content, created_at) 
-    VALUES ('$fn','$ln', '$ca', '$cr')";
+// Check for required fields
+if (!$fn || !$ln || !$ca) {
+    die("Required fields missing.");
+}
 
-$insert = mysqli_query($con, $sql); // Point of execution
+// Prepare SQL statement
+$stmt = $con->prepare("INSERT INTO devto.article (user_id, title, content, created_at) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("isss", $fn, $ln, $ca, $cr);
 
-if ($insert) {
+// Execute and check for success
+if ($stmt->execute()) {
     echo "Data inserted successfully.";
 } else {
-    echo "Failed to insert data: " . mysqli_error($con);
+    echo "Failed to insert data: " . $stmt->error;
 }
+
+$stmt->close();
+$con->close();
 ?>

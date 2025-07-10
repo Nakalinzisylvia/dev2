@@ -18,8 +18,8 @@
         <form method="Post" action="insert.php">
            
         <div class="mb-3">
-                <label for="exampleInputtitle" class="form-label">user_id</label>
-                <input type="text" class="form-control" id="exampleInputtitle" aria-describedby="titleHelp" name="user_id">
+                <label for="exampleInputuser_id" class="form-label">user_id</label>
+                <input type="int" class="form-control" id="exampleInputuser_id" aria-describedby="user_idHelp" name="user_id">
 
             </div>
         
