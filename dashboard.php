@@ -1,3 +1,28 @@
+<?php
+include "./conn.php";
+
+
+$sql = "select * from article";
+
+
+$res = mysqli_query($con, $sql);
+
+if ($res) {
+
+  $data  = mysqli_fetch_all($res, MYSQLI_ASSOC);
+} else {
+  echo "Failed" . mysqli_error($con);
+}
+
+
+session_start();
+
+// Block access if not logged in
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: login.php");
+    exit;
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -93,63 +118,20 @@
       </div>
 
       <div class="col-lg-6">
-        <button type="button" class="btn btn-light">Relevant</button>
+        <button type="button" class="btn btn-light">hhh</button>
         <button type="button" class="btn btn-light">Latest</button>
         <button type="button" class="btn btn-light">Top</button>
-        <div class="card mb-3">
-          <img src="https://media2.dev.to/dynamic/image/width=775%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh7klyxm3yd1cdq47vko5.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"> Introducing a new prompt: Holistic Webdev!</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text"></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-          <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdwdmtjlpqvn67do5p8oa.png" class="card-img-bottom" alt="...">
-        </div>
 
-        <div class="card">
-          <div class="card-header">
-            Quote
+        <?php foreach ($data as $article) { ?>
+          <div class="card mb-3">
+            <img src="https://media2.dev.to/dynamic/image/width=775%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh7klyxm3yd1cdq47vko5.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><?= $article['title'] ?></h5>
+              <p class="card-text"><?= $article['content'] ?></p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
           </div>
-          <div class="card-body mb-3">
-            <blockquote class="blockquote mb-0">
-              <p><strong>Announcing the First DEV Education Track: "Build Apps with Google AI Studio"</strong></p>
-              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="card mb-3">
-          <div class="card-header">
-            Quote
-          </div>
-          <div class="card-body">
-            <blockquote class="blockquote mb-0">
-              <p><strong>9 Open source Gems to become the Ultimate Developer</strong></p>
-              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="card mb-3">
-          <div class="card-header">
-            Quote
-          </div>
-          <div class="card-body">
-            <blockquote class="blockquote mb-0">
-              <p><strong>From prompt to deployed App in less than 2 minutes</strong></p>
-              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
-          </div>
-        </div>
-
-
+        <?php } ?>
 
       </div>
 
