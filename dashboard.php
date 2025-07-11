@@ -14,14 +14,6 @@ if ($res) {
   echo "Failed" . mysqli_error($con);
 }
 
-
-session_start();
-
-// Block access if not logged in
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: login.php");
-    exit;
-}
 ?>
 <!doctype html>
 <html lang="en">

@@ -1,33 +1,29 @@
 <?php
+ob_start();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 include './conn.php';
 
-$email = $_POST['email'];
-$pass = $_POST['password'];
+$email = $_POST['email'] ?? '';
+$pass = $_POST['password'] ?? '';
+$passHash = md5($pass);
 
-// var_dump($uname, $pass); return;
-//hashing user password
-$pashHash = md5($pass);
-//checking the supplied creds against the db
-$sql = "SELECT * from users where email = '$email'  and password = '$pashHash' ";
+$sql = "SELECT * FROM users WHERE email = '$email' AND password = '$passHash'";
+$result = mysqli_query($con, $sql);
 
-$result = mysqli_query($con,$sql);
-
-//check if there atleast one record
+if (!$result) {
+    die("SQL error: " . mysqli_error($con));
+}
 
 $numRows = mysqli_num_rows($result);
+echo "Rows matched: " . $numRows;
 
-if($numRows > 0){
-    //redirection
-    // var_dump('loged in');
-    header("location: ./dashboard.php");
-}
-else{
-    //redirections
-    header("Location: login.php?msg=Username or password incorret!");
+if ($numRows > 0) {
+   header("Location: dashboard.php");
+    exit;
+} else {
+    echo "❌ Login failed.";
+    header("Location: login.php?msg=Incorrect credentials");
     exit;
 }
-
-
-
-
-?>
