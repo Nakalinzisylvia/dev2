@@ -110,10 +110,10 @@ if ($res) {
         </div>
       </div>
 
-      <div class="col-lg-6">
-        <button type="button" class="btn btn-light">hhh</button>
-        <button type="button" class="btn btn-light">Latest</button>
-        <button type="button" class="btn btn-light">Top</button>
+      <div class="col-lg-6"><br>
+        <button type="button" class="btn btn-light">What is on your mind ?</button><br><br>
+        <button type="button" class="btn btn-light">Dicover</button>
+        <button type="button" class="btn btn-light">Following</button><br>
 
         <?php foreach ($data as $article) { ?>
           <div class="card mb-3">
