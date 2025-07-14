@@ -47,7 +47,7 @@ if ($res) {
             <h5 class="card-title">DEV Community is a community of 3,292,028 amazing developers </h5>
             <h6 class="card-subtitle mb-2 text-muted"></h6>
             <p class="card-text">We're a place where coders share, stay up-to-date and grow their careers. </p>
-            <a href="./login.php" class="card-link">login </a>
+            <a href="./loginforms.php" class="card-link">login </a>
             <a href="./createaccount.php" class="card-link"> create account</a>
           </div>
         </div>

@@ -17,11 +17,13 @@ $pw =$_POST['password'];
 
 $passHash = md5($pw);
 
-
+// var_dump($passHash); return;
 // inserting to the database
 
-$sql = "INSERT INTO users(f_name,l_name,username,email,telephone,password) 
-values('$fn','$ln','$un','$ea','$tn','$passHash') ";
+// $sql = "INSERT INTO users(f_name,l_name,username,email,telephone,password) values('$fn','$ln','$un','$ea','$tn','$passHash') ";
+
+$sql = "INSERT INTO users(f_name, l_name, username, email,telephone,password)
+values('$fn','$ln','$un','$ea','$tn', '$passHash') ";
 
 $insert = mysqli_query($con,$sql); //point of execution
 
