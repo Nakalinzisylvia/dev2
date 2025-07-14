@@ -30,15 +30,16 @@ if ($res) {
 </head>
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand"><img src="dev.png" alt="" height="50px" width="50px"></a>
+    <a class="navbar-brand"><img src="dev.png" alt="" height="50px" width="50px"> </a>
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
+    <button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button>
   </div>
 </nav>
 
-<body>
+<body style="background-color: pink;">
   <div class="container-xl">
     <div class="row">
       <div class="col-lg-3">
@@ -47,7 +48,7 @@ if ($res) {
             <h5 class="card-title">DEV Community is a community of 3,292,028 amazing developers </h5>
             <h6 class="card-subtitle mb-2 text-muted"></h6>
             <p class="card-text">We're a place where coders share, stay up-to-date and grow their careers. </p>
-            <a href="./loginforms.php" class="card-link">login </a>
+            <a href="./login.php" class="card-link">login </a>
             <a href="./createaccount.php" class="card-link"> create account</a>
           </div>
         </div>
