@@ -24,6 +24,6 @@ if ($numRows > 0) {
     exit;
 } else {
     echo "❌ Login failed.";
-    header("Location: login.php?msg=Incorrect credentials");
+    header("Location: loginform.php?msg=Incorrect credentials");
     exit;
 }
