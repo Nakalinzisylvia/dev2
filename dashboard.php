@@ -39,7 +39,7 @@ if ($res) {
   </div>
 </nav>
 
-<body style="background-color: pink;">
+<body style="background-color:#f6f6f6 ;">
   <div class="container-xl">
     <div class="row">
       <div class="col-lg-3">
