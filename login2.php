@@ -1,9 +1,12 @@
+
 <?php
+session_start();
+include './conn.php';
+
 ob_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-include './conn.php';
 
 $email = $_POST['email'] ?? '';
 $pass = $_POST['password'] ?? '';
@@ -19,11 +22,13 @@ if (!$result) {
 $numRows = mysqli_num_rows($result);
 echo "Rows matched: " . $numRows;
 
-if ($numRows > 0) {
-   header("Location: dashboard.php");
-    exit;
+if ($numRows > 0) {                   //here we know someone is logged in
+    $_SESSION['loggedin'] = true;
+    $_SESSION['email'] = $email;
+    header("Location:dashboard.php");
+
 } else {
-    echo "❌ Login failed.";
+    echo " Login failed.";
     header("Location: loginform.php?msg=Incorrect credentials");
     exit;
 }
