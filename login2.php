@@ -1,7 +1,12 @@
-<?php
-session_start(); 
 
+<?php
+session_start();
 include './conn.php';
+
+ob_start();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 
 $email = $_POST['email'] ?? '';
 $pass = $_POST['password'] ?? '';
@@ -36,6 +41,14 @@ if ($numRows > 0) {
 
     echo "Login failed.";
     header("Location: login.php?msg=Incorrect credentials");
+if ($numRows > 0) {                   //here we know someone is logged in
+    $_SESSION['loggedin'] = true;
+    $_SESSION['email'] = $email;
+    header("Location:dashboard.php");
+
+} else {
+    echo " Login failed.";
+    header("Location: loginform.php?msg=Incorrect credentials");
     exit;
 }
 ?>

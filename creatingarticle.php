@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+include 'conn.php'; // database connection
+
+if (isset($_POST['title']) && isset($_POST['content'])) {
+    $user_id = $_SESSION['user_id']; // Get logged-in user ID
+    $title = mysqli_real_escape_string($con, $_POST['title']);
+    $content = mysqli_real_escape_string($con, $_POST['content']);
+
+    $sql = "INSERT INTO articles (user_id, title, content) VALUES ('$user_id', '$title', '$content')";
+
+    if (mysqli_query($con, $sql)) {
+        echo "Article posted successfully!";
+    } else {
+        echo "Error: " . mysqli_error($con);
+    }
+}
+?>
+
 
 <!doctype html>
 <html lang="en">
@@ -10,21 +30,22 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>New Post</title>
+    <title>create article</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-5">
+        <h4>CREATE YOUR ARTICLE</h4>
         <form method="Post" action="insert.php">
-           
-        <div class="mb-3">
-                <label for="exampleInputuser_id" class="form-label">user_id</label>
+
+            <div class="mb-3">
+                <label for="exampleInputuser_id" class="form-label">user</label>
                 <input type="int" class="form-control" id="exampleInputuser_id" aria-describedby="user_idHelp" name="user_id">
 
             </div>
-        
-        
-        <div class="mb-3">
+
+
+            <div class="mb-3">
                 <label for="exampleInputtitle" class="form-label">Title</label>
                 <input type="text" class="form-control" id="exampleInputtitle" aria-describedby="titleHelp" name="title">
 
