@@ -1,9 +1,4 @@
 <?php
-session_start();
-//un setting session data
-// unset($_SESSION['name']);
-// var_dump($_SESSION);
-
 include "./conn.php";
 
 
@@ -40,10 +35,7 @@ if ($res) {
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
-      <h6>
-        <span><?= $_SESSION['email'] ?? 'NA'; ?></span>
-        <button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post </a></button>
-      </h6>
+    <button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button>
   </div>
 </nav>
 
@@ -111,17 +103,15 @@ if ($res) {
           <p class="fs-0.5"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z" />
               </svg></span>Forem Shop</p>
-          <p class="fs-0.5"><span></span>Forem Shop</p>
-
-
+          <p class="fs-2"><span></span><a href="./logout.php">LOGOUT</a></p>
 
         </div>
       </div>
 
-      <div class="col-lg-6">
-        <button type="button" class="btn btn-outline-primary"><a href="">hhh</a></button>
-        <button type="button" class="btn btn-outline-primary"><a href="">Latest</a></button>
-        <button type="button" class="btn btn-outline-primary"><a href="">Top</a></button>
+      <div class="col-lg-6"> 
+        <button type="button" class="btn btn-light">hhh</button>
+        <button type="button" class="btn btn-light">Latest</button>
+        <button type="button" class="btn btn-light">Top</button>
 
         <?php foreach ($data as $article) { ?>
           <div class="card mb-3">
