@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Block access if not logged in
+
+if ($_SESSION['loggedin'] === true) {
+  header("Location:dashboard.php");
+  exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
