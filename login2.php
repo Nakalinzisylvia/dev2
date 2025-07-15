@@ -1,7 +1,5 @@
 <?php
-ob_start();
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+session_start(); 
 
 include './conn.php';
 
@@ -19,11 +17,25 @@ if (!$result) {
 $numRows = mysqli_num_rows($result);
 echo "Rows matched: " . $numRows;
 
+// Set session variables
+
+    $_SESSION['user_id'] = $user['id'];
+    $_SESSION['email'] = $user['email'];
+    $_SESSION['logged_in'] = true;
+
 if ($numRows > 0) {
    header("Location: dashboard.php");
     exit;
-} else {
-    echo "❌ Login failed.";
+
+} else { 
+    
+    // Optionally unset any session data if login fails
+    session_unset();
+    session_destroy();
+
+
+    echo "Login failed.";
     header("Location: login.php?msg=Incorrect credentials");
     exit;
 }
+?>
