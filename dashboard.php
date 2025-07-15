@@ -1,4 +1,9 @@
 <?php
+session_start();
+//un setting session data
+// unset($_SESSION['name']);
+// var_dump($_SESSION);
+
 include "./conn.php";
 
 
@@ -35,7 +40,10 @@ if ($res) {
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
-    <button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button>
+      <h6>
+        <span><?= $_SESSION['email'] ?? 'NA'; ?></span>
+        <button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post </a></button>
+      </h6>
   </div>
 </nav>
 
@@ -111,9 +119,9 @@ if ($res) {
       </div>
 
       <div class="col-lg-6">
-        <button type="button" class="btn btn-light">hhh</button>
-        <button type="button" class="btn btn-light">Latest</button>
-        <button type="button" class="btn btn-light">Top</button>
+        <button type="button" class="btn btn-outline-primary"><a href="">hhh</a></button>
+        <button type="button" class="btn btn-outline-primary"><a href="">Latest</a></button>
+        <button type="button" class="btn btn-outline-primary"><a href="">Top</a></button>
 
         <?php foreach ($data as $article) { ?>
           <div class="card mb-3">
