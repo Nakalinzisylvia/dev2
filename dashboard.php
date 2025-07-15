@@ -35,24 +35,8 @@ if ($res) {
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
-
-    <div class="dropdown">
-      
-        
-<span>
-    
-    </div><h6><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-          USER PROFILE
-        </button>
-        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-          <li><a class="dropdown-item active" href="#">Profile</a></li>
-          <li><a class="dropdown-item" href="#"> Settings</a></li>
-          <li><a class="dropdown-item" href="#"> Activity</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="./logout.php"> LOGOUT</a></li>
-        </ul><button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button></h6>
+    <span>
+    <button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button>
     </span>
   </div>
 </nav>
@@ -126,10 +110,17 @@ if ($res) {
         </div>
       </div>
 
+<<<<<<< HEAD
       <div class="col-lg-6"><br>
         <button type="button" class="btn btn-light">What is on your mind ?</button><br><br>
         <button type="button" class="btn btn-light">Dicover</button>
         <button type="button" class="btn btn-light">Following</button><br>
+=======
+      <div class="col-lg-6">
+        <button type="button" class="btn btn-light">hhh</button>
+        <button type="button" class="btn btn-light">Latest</button>
+        <button type="button" class="btn btn-light">Top</button>
+>>>>>>> origin/regan
 
         <?php foreach ($data as $article) { ?>
           <div class="card mb-3">

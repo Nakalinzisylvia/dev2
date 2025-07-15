@@ -1,15 +1,15 @@
-
 <?php
-session_start();
-include './conn.php';
+session_start(); //starting session on login
 
 ob_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+include './conn.php';
 
-$email = $_POST['email'] ?? '';
-$pass = $_POST['password'] ?? '';
+$email = $_POST['email'];
+$pass = $_POST['password'];
+
 $passHash = md5($pass);
 
 $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$passHash'";
@@ -22,32 +22,13 @@ if (!$result) {
 $numRows = mysqli_num_rows($result);
 echo "Rows matched: " . $numRows;
 
-// Set session variables
-
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['email'] = $user['email'];
-    $_SESSION['logged_in'] = true;
-
 if ($numRows > 0) {
+    $_SESSION['email'] = $email;
+    // var_dump($_SESSION); return;
    header("Location: dashboard.php");
     exit;
-
-} else { 
-    
-    // Optionally unset any session data if login fails
-    session_unset();
-    session_destroy();
-
-
-    echo "Login failed.";
-    header("Location: login.php?msg=Incorrect credentials");
-if ($numRows > 0) {                   //here we know someone is logged in
-    $_SESSION['loggedin'] = true;
-    $_SESSION['email'] = $email;
-    header("Location:dashboard.php");
-
 } else {
-    echo " Login failed.";
+    echo "❌ Login failed.";
     header("Location: loginform.php?msg=Incorrect credentials");
     exit;
 }
