@@ -1,8 +1,8 @@
 <?php
 session_start();
 
+$_SESSION['user_id'] = $user['id'];
 // Block access if not logged in
-
 if ($_SESSION['loggedin'] === true) {
   header("Location:dashboard.php");
   exit;
