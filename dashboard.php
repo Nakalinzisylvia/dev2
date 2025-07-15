@@ -35,7 +35,9 @@ if ($res) {
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
+    <span>
     <button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button>
+    </span>
   </div>
 </nav>
 
@@ -108,7 +110,7 @@ if ($res) {
         </div>
       </div>
 
-      <div class="col-lg-6"> 
+      <div class="col-lg-6">
         <button type="button" class="btn btn-light">hhh</button>
         <button type="button" class="btn btn-light">Latest</button>
         <button type="button" class="btn btn-light">Top</button>
