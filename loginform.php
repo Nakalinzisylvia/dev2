@@ -14,7 +14,7 @@ if ($_SESSION['loggedin'] === true) {
 <html lang="en">
 
 <head>
-	<title>Login V4</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -120,7 +120,7 @@ if ($_SESSION['loggedin'] === true) {
 							Or Sign Up Using
 						</span>
 
-						<a href="#" class="txt2">
+						<a href="./createaccount.php" class="txt2">
 							Sign Up
 						</a>
 					</div>

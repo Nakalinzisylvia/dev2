@@ -28,8 +28,12 @@ values('$fn','$ln','$un','$ea','$tn', '$passHash') ";
 $insert = mysqli_query($con,$sql); //point of execution
 
 if($insert){
-   echo 'data inserted';
-}
+   if ($insert > 0) 
+    // $_SESSION['email'] = $email;
+    // var_dump($_SESSION); return;
+   header("Location: loginform.php");
+    exit;
+} 
 else{
     echo "Failed to insert data".mysqli_error($con); 
 }
