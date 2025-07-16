@@ -31,7 +31,7 @@ if ($res) {
 <body style="background-color: #fff;">
 
     <div class="container">
-        <h3 style="text-align: center;">Registered Users <span class="btn btn-warning"><a href="createaccount.php"> create Account</a></span></h3>
+        <h3 style="text-align: center;">Registered Users</h3>
 
         <table class="table table-striped" border="5">
             <thead>
