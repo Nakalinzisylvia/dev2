@@ -36,7 +36,8 @@ if (isset($_POST['title']) && isset($_POST['content'])) {
 <body>
     <div class="container mt-5">
         <h4>CREATE YOUR ARTICLE</h4>
-        <form method="Post" action="insert.php">
+
+        <form method="Post" action="insertarticle.php" enctype="multipart/form-data">
 
             <div class="mb-3">
                 <label for="exampleInputuser_id" class="form-label">user</label>
@@ -55,6 +56,10 @@ if (isset($_POST['title']) && isset($_POST['content'])) {
                 <input type="text" class="form-control" id="exampleInputcontent" name="content">
             </div>
 
+            <div class="mb-3">
+                <label for="exampleInputcontent" class="form-label">Picture</label>
+                <input type="file" class="form-control" id="exampleInputcontent" name="img">
+            </div>
             <button type="submit" class="btn btn-primary">Post</button>
         </form>
     </div>

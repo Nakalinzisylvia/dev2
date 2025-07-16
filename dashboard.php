@@ -59,7 +59,7 @@ if ($res) {
   </div>
 </nav>
 
-<body style="background-color: pink;">
+<body style="background-color: ffff">
   <div class="container-xl">
     <div class="row">
       <div class="col-lg-3">
@@ -137,11 +137,11 @@ if ($res) {
 
         <?php foreach ($data as $article) { ?>
           <div class="card mb-3">
-            <img src="https://media2.dev.to/dynamic/image/width=775%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh7klyxm3yd1cdq47vko5.png" class="card-img-top" alt="...">
+          <img src="data:image/jpeg;base64,<?= $article['img']  ?>" alt="My Image">
             <div class="card-body">
               <h5 class="card-title"><?= $article['title'] ?></h5>
               <p class="card-text"><?= $article['content'] ?></p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <p class="card-text"><?= $article['created_at'] ?></p>
             </div>
           </div>
         <?php } ?>
