@@ -24,8 +24,9 @@ echo "Rows matched: " . $numRows;
 
 if ($numRows > 0) {                   //here we know someone is logged in
     $_SESSION['loggedin'] = true;
+    // $_SESSION['user_id'] = $user['id']; 
     $_SESSION['email'] = $email;
-    header("Location:dashboard.php");
+    header("Location: dashboard.php");
 
 } else {
     echo " Login failed.";

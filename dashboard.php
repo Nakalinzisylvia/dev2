@@ -45,7 +45,7 @@ if ($res) {
           USER PROFILE
         </button>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-          <li><a class="dropdown-item active" href="#">Profile</a></li>
+          <li><a class="dropdown-item active" href="./profile.php">Profile</a></li>
           <li><a class="dropdown-item" href="#"> Settings</a></li>
           <li><a class="dropdown-item" href="#"> Activity</a></li>
           <li>
