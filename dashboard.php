@@ -35,45 +35,11 @@ if ($res) {
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
-
-    <div class="dropdown">
-
-
-      <span>
-
-    </div>
-    <h6><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-        USER PROFILE
-      </button>
-      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-        <li><a class="dropdown-item active" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#"> Settings</a></li>
-        <li><a class="dropdown-item" href="#"> Activity</a></li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <li><a class="dropdown-item" href="./logout.php"> LOGOUT</a></li>
-      </ul><button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button>
-    </h6>
-    </span>
+    <button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button>
   </div>
 </nav>
-<!-- start of alert  -->
-<?php if ($_GET['msg']) { ?>
-  <div class="alert alert-warning alert-dismissible fade show" role="alert" style="text-align: center;">
-    <strong>
-      <?php
-      $msg = $_GET['msg'];
-      echo $msg;
-      ?>
-    </strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
 
-<?php } ?>
-<!-- end of alert  -->
-
-<body style="background-color: ffff">
+<body style="background-color: pink;">
   <div class="container-xl">
     <div class="row">
       <div class="col-lg-3">
@@ -104,7 +70,7 @@ if ($res) {
               </svg></span>Videos</p>
           <p class="fs-0.5"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
                 <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
-              </svg></span><a href="./users.php">Registered Users</a></p>
+              </svg></span>Tags</p>
           <p class="fs-0.5"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
                 <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z" />
                 <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z" />
@@ -137,30 +103,24 @@ if ($res) {
           <p class="fs-0.5"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z" />
               </svg></span>Forem Shop</p>
-          <p class="fs-0.5"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4M4.5 7A1.5 1.5 0 0 0 3 8.5v5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 11.5 7zM8 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3" />
-              </svg></span><a href="./logout.php">LOGOUT</a></p>
+          <p class="fs-2"><span></span><a href="./logout.php">LOGOUT</a></p>
 
         </div>
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-6"> 
         <button type="button" class="btn btn-light">hhh</button>
         <button type="button" class="btn btn-light">Latest</button>
         <button type="button" class="btn btn-light">Top</button>
 
         <?php foreach ($data as $article) { ?>
           <div class="card mb-3">
-            <img src="data:image/jpeg;base64,<?= $article['img']  ?>" alt="My Image">
+            <img src="https://media2.dev.to/dynamic/image/width=775%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh7klyxm3yd1cdq47vko5.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title"><?= $article['title'] ?></h5>
               <p class="card-text"><?= $article['content'] ?></p>
-              <p class="card-text"><?= $article['created_at'] ?></p>
-              <a href="deletarticle.php?id=<?= $article['id'] ?>" class="btn btn-outline-danger">Delete</a>
-              <a href="updatearticle.php?id=<?= $article['id'] ?>" class="btn btn-outline-primary">Edit</a>
-
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
-
           </div>
         <?php } ?>
 
@@ -193,8 +153,6 @@ if ($res) {
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
-
-
       </div>
 
     </div>
