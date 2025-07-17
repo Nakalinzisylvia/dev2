@@ -44,17 +44,18 @@ if ($res) {
     </div>
     <h6><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
         USER PROFILE
-
-        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-          <li><a class="dropdown-item active" href="#">Profile</a></li>
-          <li><a class="dropdown-item" href="#"> Settings</a></li>
-          <li><a class="dropdown-item" href="#"> Activity</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="./logout.php"> LOGOUT</a></li>
       </button>
-      </ul><button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button></h6>
+      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+        <li><a class="dropdown-item active" href="./profile.php">Profile</a></li>
+        <li><a class="dropdown-item" href="#"> Settings</a></li>
+        <li><a class="dropdown-item" href="#"> Activity</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="./logout.php"> LOGOUT</a></li>
+
+      </ul><button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button>
+    </h6>
     </span>
   </div>
 </nav>
