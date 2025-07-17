@@ -37,13 +37,14 @@ if ($res) {
     </form>
 
     <div class="dropdown">
-      
-        
-<span>
-    
-    </div><h6><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-          USER PROFILE
-        </button>
+
+
+      <span>
+
+    </div>
+    <h6><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+        USER PROFILE
+
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
           <li><a class="dropdown-item active" href="#">Profile</a></li>
           <li><a class="dropdown-item" href="#"> Settings</a></li>
@@ -52,7 +53,8 @@ if ($res) {
             <hr class="dropdown-divider">
           </li>
           <li><a class="dropdown-item" href="./logout.php"> LOGOUT</a></li>
-        </ul><button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button></h6>
+      </button>
+      </ul><button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button></h6>
     </span>
   </div>
 </nav>
@@ -135,7 +137,7 @@ if ($res) {
 
         <?php foreach ($data as $article) { ?>
           <div class="card mb-3">
-          <img src="data:image/jpeg;base64,<?= $article['img']  ?>" alt="My Image">
+            <img src="data:image/jpeg;base64,<?= $article['img']  ?>" alt="My Image">
             <div class="card-body">
               <h5 class="card-title"><?= $article['title'] ?></h5>
               <p class="card-text"><?= $article['content'] ?></p>
@@ -147,6 +149,17 @@ if ($res) {
       </div>
 
       <div class="col-lg-3">
+
+        <?php foreach ($data as $messages) { ?>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title"><?= $messages['receiver_id'] ?></h5>
+              <p class="card-text"><?= $messages['subject'] ?></p>
+              <p class="card-text"><?= $messages['message'] ?></p>
+            </div>
+          </div>
+        <?php } ?>
+
         <div class="card">
           <img src="https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fg691oplv5qw5gijyxfr5.png" class="card-img-top" alt="...">
           <div class="card-body">
