@@ -59,20 +59,20 @@ if ($res) {
   </div>
 </nav>
 <!-- start of alert  -->
-				<?php if ($_GET['msg']) { ?>
+<?php if ($_GET['msg']) { ?>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert" style="text-align: center;">
+    <strong>
+      <?php
+      $msg = $_GET['msg'];
+      echo $msg;
+      ?>
+    </strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
 
-					<div class="alert alert-warning alert-dismissible fade show" role="alert" style="text-align: center;">
-						<strong>
-							<?php
-							$msg = $_GET['msg'];
-							echo $msg;
-							?>
-						</strong>
-						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-					</div>
+<?php } ?>
+<!-- end of alert  -->
 
-				<?php } ?>
-				<!-- end of alert  -->
 <body style="background-color: ffff">
   <div class="container-xl">
     <div class="row">
@@ -151,13 +151,16 @@ if ($res) {
 
         <?php foreach ($data as $article) { ?>
           <div class="card mb-3">
-          <img src="data:image/jpeg;base64,<?= $article['img']  ?>" alt="My Image">
+            <img src="data:image/jpeg;base64,<?= $article['img']  ?>" alt="My Image">
             <div class="card-body">
               <h5 class="card-title"><?= $article['title'] ?></h5>
               <p class="card-text"><?= $article['content'] ?></p>
               <p class="card-text"><?= $article['created_at'] ?></p>
+              <a href="deletarticle.php?id=<?= $article['id'] ?>" class="btn btn-outline-danger">Delete</a>
+              <a href="updatearticle.php?id=<?= $article['id'] ?>" class="btn btn-outline-primary">Edit</a>
+
             </div>
-            
+
           </div>
         <?php } ?>
 
@@ -190,7 +193,7 @@ if ($res) {
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
-        
+
 
       </div>
 
