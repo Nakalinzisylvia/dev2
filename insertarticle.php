@@ -25,7 +25,7 @@ $stmt->bind_param("issss", $fn, $ln, $ca, $cr ,$img);
 
 // Execute and check for success
 if ($stmt->execute()) {
-    echo "Data inserted successfully.";
+     header("Location: dashboard.php?msg= Article created Successfully");
 } else {
     echo "Failed to insert data: " . $stmt->error;
 }

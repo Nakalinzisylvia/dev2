@@ -39,12 +39,6 @@ if (isset($_POST['title']) && isset($_POST['content'])) {
 
         <form method="Post" action="insertarticle.php" enctype="multipart/form-data">
 
-            <div class="mb-3">
-                <label for="exampleInputuser_id" class="form-label">user</label>
-                <input type="int" class="form-control" id="exampleInputuser_id" aria-describedby="user_idHelp" name="user_id">
-
-            </div>
-
 
             <div class="mb-3">
                 <label for="exampleInputtitle" class="form-label">Title</label>

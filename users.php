@@ -36,12 +36,11 @@ if ($res) {
         <table class="table table-striped" border="5">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>f_name</th>
-                    <th>l_name</th>
-                    <th>username</th>
-                    <th>email</th>
-                    <th>telephone</th>
+                    <th>F_name</th>
+                    <th>L_name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -49,7 +48,6 @@ if ($res) {
                 <?php foreach ($data as $value) {
                 ?>
                     <tr>
-                        <td><?php echo $value['id'] ?> </td>
                         <td><?php echo $value['f_name'] ?></td>
                         <td><?php echo $value['l_name'] ?></td>
                         <td><?php echo $value['username'] ?></td>

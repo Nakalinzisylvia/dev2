@@ -58,7 +58,21 @@ if ($res) {
     </span>
   </div>
 </nav>
+<!-- start of alert  -->
+				<?php if ($_GET['msg']) { ?>
 
+					<div class="alert alert-warning alert-dismissible fade show" role="alert" style="text-align: center;">
+						<strong>
+							<?php
+							$msg = $_GET['msg'];
+							echo $msg;
+							?>
+						</strong>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
+
+				<?php } ?>
+				<!-- end of alert  -->
 <body style="background-color: ffff">
   <div class="container-xl">
     <div class="row">
@@ -143,6 +157,7 @@ if ($res) {
               <p class="card-text"><?= $article['content'] ?></p>
               <p class="card-text"><?= $article['created_at'] ?></p>
             </div>
+            
           </div>
         <?php } ?>
 
@@ -175,6 +190,8 @@ if ($res) {
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
+        
+
       </div>
 
     </div>

@@ -20,15 +20,13 @@ $passHash = md5($pw);
 
 // inserting to the database
 
-$sql = "INSERT INTO users(f_name,l_name,username,email,telephone,password) 
+$sql = "INSERT INTO users(f_name, l_name, username, email, telephone, password) 
 values('$fn','$ln','$un','$ea','$tn','$passHash') ";
 
 $insert = mysqli_query($con,$sql); //point of execution
 
 if($insert){
    if ($insert > 0) 
-    // $_SESSION['email'] = $email;
-    // var_dump($_SESSION); return;
    header("Location: loginform.php");
     exit;
 } 
