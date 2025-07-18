@@ -44,11 +44,13 @@ if ($res) {
             <?php foreach ($data as $value) { ?>
                 <div class="col-lg-4">
                     <div class="card">
-                        <h5 class="card-header"> <?php echo $value['user_id'] ?></h5>
+                        <!-- <h5 class="card-header"> <?php echo $value['user_id'] ?></h5> -->
                         <div class="card-body">
                             <h5 class="card-title"> <?php echo $value['title'] ?> </h5>
                             <p class="card-text"><?php echo $value['content'] ?></p>
-                          
+                              <a href="deletarticle.php?id=<?= $value['id'] ?>" class="btn btn-outline-danger">Delete</a>
+                              <a href="updatearticle.php?id=<?= $value['id'] ?>" class="btn btn-outline-primary">Edit</a>
+
                         </div>
                     </div>
                 </div>
