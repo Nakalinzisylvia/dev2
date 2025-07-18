@@ -59,7 +59,7 @@ if ($res) {
   </div>
 </nav>
 <!-- start of alert  -->
-<?php if ($_GET['msg']) { ?>
+<?php if (!empty($_GET['msg'])) { ?>
   <div class="alert alert-warning alert-dismissible fade show" role="alert" style="text-align: center;">
     <strong>
       <?php
