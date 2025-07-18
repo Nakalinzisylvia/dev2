@@ -42,7 +42,7 @@ if ($res) {
       <span>
 
     </div>
-    <h6><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+    <h6><button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
         USER PROFILE
       </button>
       <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
@@ -52,7 +52,7 @@ if ($res) {
         <li>
           <hr class="dropdown-divider">
         </li>
-        <li><a class="dropdown-item" href="./logout.php"> LOGOUT</a></li>
+        <li><a class="dropdown-item" href="logout.php"> LOGOUT</a></li>
 
       </ul><button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button>
     </h6>

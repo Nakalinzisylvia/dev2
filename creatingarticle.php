@@ -33,7 +33,7 @@ if (isset($_POST['title']) && isset($_POST['content'])) {
     <title>create article</title>
 </head>
 
-<body>
+<body style="background-image: url('./site.jpg');">
     <div class="container mt-5">
         <h4>CREATE YOUR ARTICLE</h4>
 
