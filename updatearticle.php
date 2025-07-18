@@ -37,15 +37,15 @@ if ($update) {
         <form method="Post" action="updatearticlelogic.php" enctype="multipart/form-data">
 
             <input type="hidden" name="id" value="<?= $data['id'] ?>">
-            <div class="mb-3">
-                <label for="exampleInputtitle" class="form-label">Title</label>
-                <input type="text" class="form-control" id="exampleInputtitle" aria-describedby="titleHelp" name="title" value="<?= $data['title'] ?>">
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="title"></textarea>
+                <label for="floatingTextarea2">Title</label>
+            </div><br>
 
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputcontent" class="form-label">Content</label>
-                <input type="text" class="form-control" id="exampleInputcontent" name="content" value="<?= $data['content'] ?>">
-            </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 300px" name="content"></textarea>
+                <label for="floatingTextarea2">Content</label>
+            </div><br>
 
             <div class="mb-3">
                 <label for="exampleInputcontent" class="form-label">Picture</label>
