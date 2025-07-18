@@ -7,7 +7,7 @@ $ln = $_POST['title'] ;
 $ca = $_POST['content'] ;
 $cr = $_POST['created_at'] ?? date('d-m-Y H:i:s'); // Use current time if not provided
 // Check for required fields
-if ( !$ln || !$ca ) {
+if (!$ln || !$ca ) {
     die("Required fields missing.");
 }
 

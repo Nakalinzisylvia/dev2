@@ -46,13 +46,14 @@ if ($res) {
         USER PROFILE
       </button>
       <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-        <li><a class="dropdown-item active" href="#">Profile</a></li>
+        <li><a class="dropdown-item active" href="./profile.php">Profile</a></li>
         <li><a class="dropdown-item" href="#"> Settings</a></li>
         <li><a class="dropdown-item" href="#"> Activity</a></li>
         <li>
           <hr class="dropdown-divider">
         </li>
         <li><a class="dropdown-item" href="./logout.php"> LOGOUT</a></li>
+
       </ul><button type="button" class="btn btn-outline-primary"><a href="./creatingarticle.php">Create Post</a></button>
     </h6>
     </span>
@@ -60,7 +61,8 @@ if ($res) {
 </nav>
 <!-- start of alert  -->
 <?php if (!empty($_GET['msg'])) { ?>
-  <div class="alert alert-warning alert-dismissible fade show" role="alert" style="text-align: center;">
+
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>
       <?php
       $msg = $_GET['msg'];
@@ -156,9 +158,11 @@ if ($res) {
               <h5 class="card-title"><?= $article['title'] ?></h5>
               <p class="card-text"><?= $article['content'] ?></p>
               <p class="card-text"><?= $article['created_at'] ?></p>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/regan
             </div>
-
           </div>
         <?php } ?>
 
@@ -191,8 +195,6 @@ if ($res) {
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
-
-
       </div>
 
     </div>
