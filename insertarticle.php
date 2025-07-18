@@ -2,12 +2,12 @@
 include "./conn.php";
 
 // Safely get POST data
-$fn = $_POST['user_id'] ;
+// $fn = $_POST['user_id'] ;
 $ln = $_POST['title'] ;
 $ca = $_POST['content'] ;
 $cr = $_POST['created_at'] ?? date('d-m-Y H:i:s'); // Use current time if not provided
 // Check for required fields
-if (!$fn || !$ln || !$ca ) {
+if (!$ln || !$ca ) {
     die("Required fields missing.");
 }
 
