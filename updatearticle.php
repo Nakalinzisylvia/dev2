@@ -1,23 +1,20 @@
 <?php
-session_start();
+include "./conn.php";
 
-include 'conn.php'; // database connection
+$myvalue = $_GET['id'] ?? null;
 
-if (isset($_POST['title']) && isset($_POST['content'])) {
-    $user_id = $_SESSION['user_id']; // Get logged-in user ID
-    $title = mysqli_real_escape_string($con, $_POST['title']);
-    $content = mysqli_real_escape_string($con, $_POST['content']);
+$sql = "select * from article where id='$myvalue'";
 
-    $sql = "INSERT INTO articles (user_id, title, content) VALUES ('$user_id', '$title', '$content')";
+$update = mysqli_query($con, $sql);
 
-    if (mysqli_query($con, $sql)) {
-        echo "Article posted successfully!";
-    } else {
-        echo "Error: " . mysqli_error($con);
-    }
+if ($update) {
+
+    $data  = mysqli_fetch_assoc($update); // single row mysqli_fetch_assoc
+
+} else {
+    echo "Failed" . mysqli_error($con);
 }
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -37,22 +34,22 @@ if (isset($_POST['title']) && isset($_POST['content'])) {
     <div class="container mt-5">
         <h4>CREATE YOUR ARTICLE</h4>
 
-        <form method="Post" action="insertarticle.php" enctype="multipart/form-data">
+        <form method="Post" action="updatearticlelogic.php" enctype="multipart/form-data">
 
-
+            <input type="hidden" name="id" value="<?= $data['id'] ?>">
             <div class="mb-3">
                 <label for="exampleInputtitle" class="form-label">Title</label>
-                <input type="text" class="form-control" id="exampleInputtitle" aria-describedby="titleHelp" name="title">
+                <input type="text" class="form-control" id="exampleInputtitle" aria-describedby="titleHelp" name="title" value="<?= $data['title'] ?>">
 
             </div>
             <div class="mb-3">
                 <label for="exampleInputcontent" class="form-label">Content</label>
-                <input type="text" class="form-control" id="exampleInputcontent" name="content">
+                <input type="text" class="form-control" id="exampleInputcontent" name="content" value="<?= $data['content'] ?>">
             </div>
 
             <div class="mb-3">
                 <label for="exampleInputcontent" class="form-label">Picture</label>
-                <input type="file" class="form-control" id="exampleInputcontent" name="img">
+                <input type="file" class="form-control" id="exampleInputcontent" name="img" value="<?= $data['img'] ?>">
             </div>
             <button type="submit" class="btn btn-primary">Post</button>
         </form>

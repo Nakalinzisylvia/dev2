@@ -48,7 +48,7 @@ if ($res) {
                         <div class="card-body">
                             <h5 class="card-title"> <?php echo $value['title'] ?> </h5>
                             <p class="card-text"><?php echo $value['content'] ?></p>
-                            <img src="" alt="">
+                          
                         </div>
                     </div>
                 </div>
